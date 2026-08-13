@@ -30,7 +30,7 @@ from torch.utils.tensorboard import SummaryWriter
 
 import models
 import parser
-from utils import utils
+from x.metalearner.app.utils import utils
 
 class MAML(object):
     def __init__(self, model, inner_loop_params, optimizer_theta=None,

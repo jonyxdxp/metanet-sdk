@@ -16,7 +16,7 @@ from torch import nn
 from torch import optim
 from torch.nn.parameter import Parameter
 from collections import OrderedDict
-from utils import *
+from x.metalearner.app.utils import *
 import random
 from net import Net
 
@@ -198,7 +198,7 @@ from torch.nn import functional as F
 from torch.utils.data import DataLoader
 
 import arguments
-import utils
+import x.metalearner.app.utils as utils
 from dataset_miniimagenet import MiniImagenet
 from logger import Logger
 from models import CondConvNet

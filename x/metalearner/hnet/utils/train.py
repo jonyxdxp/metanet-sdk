@@ -6,9 +6,9 @@ NOTE: This file is not used inside the HNet package, but contains useful utiliti
 
 import torch
 
-from hnet.modules.dc import RoutingModuleOutput
-from hnet.models.mixer_seq import HNetForCausalLM
-from hnet.modules.utils import apply_optimization_params
+from x.metalearner.hnet.modules.dc import RoutingModuleOutput
+from x.metalearner.hnet.models.mixer_seq import HNetForCausalLM
+from x.metalearner.hnet.modules.utils import apply_optimization_params
 
 def load_balancing_loss(
     router_output: RoutingModuleOutput,

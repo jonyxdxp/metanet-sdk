@@ -14,13 +14,13 @@ from tqdm import tqdm
 
 sys.path.insert(0, '/content/notebooks_meta/v6/s1')
 
-from cog_arch.encoder import Encoder
-from losses import BCS   # BCS kept as optional alternative
+from x.metalearner.app.cog_arch.encoder import Encoder
+from x.metalearner.app.losses import BCS   # BCS kept as optional alternative
 
 
 
 from data.dataloader import get_jepa_dataloaders
-from data.dataset import VOCAB_SIZE, tokenizer
+from x.metalearner.app.data.dataset import VOCAB_SIZE, tokenizer
 
 
 
@@ -426,7 +426,7 @@ def load_checkpoint(path, context_encoder, target_encoder,
 
 def run(cfg=None):
     if cfg is None:
-        from config import CFG as cfg    # your existing config object
+        from x.metalearner.app.config import CFG as cfg    # your existing config object
 
     DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
 

@@ -4,15 +4,15 @@ from typing import Union, Optional
 import torch
 import torch.nn as nn
 
-from hnet.modules.isotropic import Isotropic, IsotropicInferenceParams
-from hnet.modules.dc import (
+from x.metalearner.hnet.modules.isotropic import Isotropic, IsotropicInferenceParams
+from x.metalearner.hnet.modules.dc import (
     RoutingModule,
     ChunkLayer,
     DeChunkLayer,
     RoutingModuleState,
     DeChunkState,
 )
-from hnet.modules.utils import apply_optimization_params
+from x.metalearner.hnet.modules.utils import apply_optimization_params
 
 from .config_hnet import HNetConfig
 

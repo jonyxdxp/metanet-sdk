@@ -668,7 +668,7 @@ PAD_TOKEN_ID = 1   # RoBERTa pad token
 
 def get_mi_loss(ctx_list, rsp_list, model, pad_token_id=PAD_TOKEN_ID):
     """Analogue of get_acc_loss — returns (loss, mi) instead of (loss, acc)."""
-    from data.dataset import DialogPairDataset
+    from x.metalearner.app.data.dataset import DialogPairDataset
     loader = torch.utils.data.DataLoader(
         DialogPairDataset(ctx_list, rsp_list), batch_size=64, shuffle=False)
     model.eval(); model = model.to(device)
@@ -688,7 +688,7 @@ def get_maml_mi_loss(trn_ctx, trn_rsp, model, model_func, learning_rate, num_gra
                      tst_ctx=None, tst_rsp=None, weight_decay=0,
                      pad_token_id=PAD_TOKEN_ID, batch_sz=32):
     """Analogue of get_maml_acc_loss for SMI/DMI objective."""
-    from data.dataset import DialogPairDataset
+    from x.metalearner.app.data.dataset import DialogPairDataset
     _model = model_func().to(device)
     _model.load_state_dict(copy.deepcopy(dict(model.named_parameters())), strict=False)
     for p in _model.parameters(): p.requires_grad = True
@@ -731,7 +731,7 @@ def train_MOML_smi_model(model, model_func, trn_ctx, trn_rsp,
                          pad_token_id, sch_step, sch_gamma,
                          inner_batch_size=16):   # ← new param, small for higher
     """MOML outer loop training with DMI objective instead of CrossEntropy."""
-    from data.dataset import DialogPairDataset
+    from x.metalearner.app.data.dataset import DialogPairDataset
     model.train(); model = model.to(device)
 
     optimizer_ = torch.optim.Adam(model.parameters(), lr=learning_rate, weight_decay=weight_decay)

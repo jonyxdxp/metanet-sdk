@@ -545,10 +545,10 @@ if __name__ == '__main__':
     import sys
     sys.path.insert(0, '/content/notebooks_meta/v6/s1')
 
-    from cog_arch.encoder import Encoder
-    from losses import BCS
-    from data.dataset import tokenizer
-    from config import CFG, DEVICE
+    from x.metalearner.app.cog_arch.encoder import Encoder
+    from x.metalearner.app.losses import BCS
+    from x.metalearner.app.data.dataset import tokenizer
+    from x.metalearner.app.config import CFG, DEVICE
 
     CKPT = '/content/drive/MyDrive/metanet/v6/s1/checkpoints/best.pt'
 

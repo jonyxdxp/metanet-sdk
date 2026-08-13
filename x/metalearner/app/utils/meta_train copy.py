@@ -28,12 +28,12 @@ from tqdm import tqdm
 import sys
 sys.path.insert(0, '/content/notebooks_meta/v6/s1')
 
-from cog_arch.encoder import Encoder
-from losses import BCS
+from x.metalearner.app.cog_arch.encoder import Encoder
+from x.metalearner.app.losses import BCS
 from data.dataloader import get_jepa_dataloaders
-from data.dataset import VOCAB_SIZE, tokenizer
-import config
-from config import CFG, DEVICE
+from x.metalearner.app.data.dataset import VOCAB_SIZE, tokenizer
+import x.metalearner.app.config as config
+from x.metalearner.app.config import CFG, DEVICE
 
 
 
